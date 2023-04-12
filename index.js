@@ -3,7 +3,8 @@ const fs = require('fs');
 const { Triangle, Circle, Square } = require('./lib/shapes');
 
 // Questions for logo details
-const questions = [{
+const questions = inquirer.prompt([
+    {
     type: 'input',
     name: 'text',
     message: 'Enter up to 3 characters for your logo:',
@@ -31,4 +32,16 @@ const questions = [{
         name: 'shapeColor',
         message: 'Enter a color for your shape:'
     }
-];
+]) .then(response => writeToFile(response));
+
+// Write the logo file
+function writeToFile(response) {
+    const logoSVG = getLogoSVG(response.text, response.textColor, response.shape, response.shapeColor);
+    fs.writeFile('logo.svg', logoSVG, (err) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log('Logo file saved!');
+        }
+    });
+}
