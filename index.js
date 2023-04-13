@@ -1,9 +1,10 @@
-const inquirer = require('inquirer');
+const inquirer = require('inquirer').createPromptModule();
 const fs = require('fs');
 const { Triangle, Circle, Square } = require('./lib/shapes');
 
 // Questions for logo details
-const questions = inquirer.prompt([
+async function askQuestions() {
+const questions = await inquirer.prompt([
     {
     type: 'input',
     name: 'text',
@@ -32,7 +33,9 @@ const questions = inquirer.prompt([
         name: 'shapeColor',
         message: 'Enter a color for your shape:'
     }
-]) .then(response => writeToFile(response));
+]);
+    writeToFile(questions);
+}
 
 // Write the logo file
 function writeToFile(response) {
@@ -45,3 +48,5 @@ function writeToFile(response) {
         }
     });
 }
+
+askQuestions();
