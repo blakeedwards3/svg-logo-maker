@@ -8,7 +8,7 @@ import shapes from './lib/shapes.js';
 function getLogoSVG(text, textColor, shape, shapeColor) {
     const shapeObject = new shapes[shape](shapeColor);
     return `
-        <svg viewBox="0 0 300 200" xm1ns="http://www.w3.org/2000/svg">
+        <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         ${shapeObject.render()}
         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${textColor}" font-size="100">${text}</text>
         </svg>
