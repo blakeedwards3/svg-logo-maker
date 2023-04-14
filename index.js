@@ -1,9 +1,7 @@
-import inquirer from 'inquirer';
-import fs from 'fs';
-import Triangle from './lib/shapes.js';
-import Circle from './lib/shapes.js'; 
-import Square from './lib/shapes.js'; 
-import shapes from './lib/shapes.js';
+const inquirer = require('inquirer');
+const fs = require('fs');
+const {Shape, Triangle, Circle, Square} = require('./lib/shapes.js')
+
 
 function getLogoSVG(text, textColor, shape, shapeColor) {
     const shapeObject = new shapes[shape](shapeColor);
