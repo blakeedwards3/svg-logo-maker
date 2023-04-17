@@ -4,7 +4,8 @@ const {Shape, Triangle, Circle, Square} = require('./lib/shapes.js')
 
 
 function getLogoSVG(text, textColor, shape, shapeColor) {
-    const shapeObject = new shapes[shape](shapeColor);
+    const ShapeClass = eval(shape);
+    const shapeObject = new ShapeClass(shapeColor);
     return `
         <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         ${shapeObject.render()}
