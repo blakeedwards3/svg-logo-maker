@@ -23,7 +23,7 @@ const questions = await inquirer.prompt([
     message: 'Enter up to 3 characters for your logo:',
     validate: async (input) => {
         if (input.length > 3) {
-            return "Error: Too many characters.";
+            return "Error: Too many characters. Please enter 3 characters";
         } else {
             return true;
         }
