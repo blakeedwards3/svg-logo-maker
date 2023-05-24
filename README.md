@@ -9,6 +9,8 @@ This challenge was to create a Node.js command-line application that takes in us
 - GitHub Repository: https://github.com/blakeedwards3/svg-logo-maker
 - Walkthrough video: https://drive.google.com/file/d/1McCUO_QusBLQ7sii_-LEazm8eEAFCsj_/view
 
+![Alt text](logo.svg)
+
 ## Installation
 
 Run "npm install" in the CLI.
