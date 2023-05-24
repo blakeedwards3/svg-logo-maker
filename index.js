@@ -9,7 +9,7 @@ function getLogoSVG(text, textColor, shape, shapeColor) {
     return `
         <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         ${shapeObject.render()}
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${textColor}" font-size="100">${text}</text>
+        <text x="150" y="100" dominant-baseline="middle" text-anchor="middle" fill="${textColor}" font-size="70">${text}</text>
         </svg>
     `;
 }
